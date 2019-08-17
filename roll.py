@@ -9,9 +9,16 @@ __author__ = 'Alex Warren'
 
 import argparse
 
+
+def print_outcome(dice):
+    print(dice)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('dice_list', nargs='*', help='<# of dice>d<die type>')
 
     args = parser.parse_args()
-    print(args.dice_list)
+    
+    for d in args.dice_list:
+        print_outcome(d)
