@@ -20,7 +20,7 @@ def validate_format(dice):
 
         die_type = int( re.findall(r'\d{1,2}$', dice)[0] )
 
-        faces = (4, 6, 8, 10, 20)
+        faces = (4, 6, 8, 10, 12, 20)
         DIE_TYPES = frozenset(faces)
         
         if die_type in DIE_TYPES:
