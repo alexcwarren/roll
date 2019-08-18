@@ -4,8 +4,8 @@
 roll.py:
 Simulates rolls of different varieties of dice.
 '''
-
 __author__ = 'Alex Warren'
+
 
 import argparse
 import re
