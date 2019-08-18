@@ -31,7 +31,7 @@ def validate_format(dice):
 
 def print_outcome(num_dice, die_type):
     sum = 0
-    for i in range(num_dice):
+    for _ in range(num_dice):
         roll = random.randint(1, die_type)
         sum += roll
         print(roll, end=' ')
