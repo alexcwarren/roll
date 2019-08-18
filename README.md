@@ -5,7 +5,7 @@ Simulate rolling one or more different types of dice (e.g. d4's, d6's, d8's, d10
 Assuming you have Python 3 already installed, download `roll.py`.
 
 ## Usage
-From the directory you downloaded `roll.py`, execute the script:
+Open a command terminal and navigate to the directory you downloaded `roll.py` then execute the script:
 ```
 python roll.py <number of dice>d<die type>
 ```
