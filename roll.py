@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''
 roll.py:
@@ -22,10 +22,10 @@ def validate_format(dice):
 
         faces = (4, 6, 8, 10, 20)
         DIE_TYPES = frozenset(faces)
-        
+
         if die_type in DIE_TYPES:
             is_valid = True
-    
+
     return (is_valid, num_dice, die_type)
 
 
@@ -38,18 +38,24 @@ def print_outcome(num_dice, die_type):
     print('= %d' % sum)
 
 
+def terminate(exit_message):
+    print('{}\n'.format(exit_message))
+    exit()
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('dice_list', nargs='*', help='<# of dice>d<die type>')
 
     args = parser.parse_args()
-    
+
+    if len(args.dice_list) < 1:
+        terminate(parser.print_help())
+
     for d in args.dice_list:
         print('%s:' % d)
         is_valid, num_dice, die_type = validate_format(d)
         if is_valid:
             print_outcome( num_dice, die_type )
         else:
-            parser.print_help()
-            print('\n')
-            exit()
+            terminate(parser.print_help())
